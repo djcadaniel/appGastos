@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet"
 import { Header, Titulo } from "../elementos/Header"
 import { BtnRegresar } from "../elementos/BtnBack"
-import { useAuth } from "../context/AuthContext"
+import { BarraTotalGastado } from "./BarraTotalGastado"
+import { useGetGastos } from "../hooks/useGetGastos"
 
 export const ListGastos = () => {
 
-  const contexto = useAuth();
-  console.log(contexto)
+  const [gastos] = useGetGastos()
+  console.log(gastos)
 
   return (
     <>
@@ -17,6 +18,7 @@ export const ListGastos = () => {
         <BtnRegresar />
         <Titulo>Gastos por Categoría</Titulo>
       </Header>
+      <BarraTotalGastado />
     </>
   )
 }

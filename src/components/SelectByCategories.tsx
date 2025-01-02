@@ -78,8 +78,13 @@ export const SelectByCategories = ({category, setCategory}: SelectByCategoriesPr
 ]
 
 const handleClick = (e: MouseEvent<HTMLDivElement>) => {
-  console.log(e.currentTarget.dataset.valor)
-  setCategory(e.currentTarget.dataset.valor)
+  // console.log(e.currentTarget.dataset.valor)
+  // setCategory(e.currentTarget.dataset.valor)
+  const valor = e.currentTarget.dataset.valor;
+  if (valor !== undefined) {
+    console.log(valor);
+    setCategory(valor);
+  }
 }
 
   return (
